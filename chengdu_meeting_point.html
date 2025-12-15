@@ -1,0 +1,1561 @@
+<html lang="zh-CN"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ4ZWQ3YTU3YzkyMTgwYzk0YjI2MzE3ZjMzYjY5MWE4MWRlNzYzNTEiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMzg4NDg2OTYxMzE3MjU1NDgxMCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzRhOWY3NjE4MWZlMjYxZTZfaW5kZXguaHRtbC00NDUifSwiZXhwIjoxNzY1ODEzMDU0LCJpYXQiOjE3NjU4MDk0NTQsImFsZyI6IlJTMjU2In0.TPssBUAMCIBRLTBdAnPEt8X-O0vcBfg_bmwr_QoWA4IZIczpPSYXgVvK5hOKfMGUAiSJF5Z1s3rbrIqF9wgU0npuME0-mN-dshb7y6BKenz95BmKgbNp5_W_VkOgLPdhrULbCQpFAn_HWKZ7i4AUNJZ4rdrBUuthhbO7gZt7xhWAuJnWZkgaSUgYrPbeW2AMKZT7YFI0g-zQ6kqn3yti16EPDiy5x_uiSrtXv6nEj3aBtiwh49gcf0fXUrBbAR8jdssZ8___lrhWgRIWGUASogG0R4hsUWfQ52v0SIWKk38i-WWczZOxZokqMu7vt8J5PweNyFjTcfHsrP9jJY-wSg","c_4a9f76181fe261e6_index.html-445")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚点 | 成都聚会神器</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts: Patrick Hand -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&amp;display=swap" rel="stylesheet">
+
+    <!-- Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'hand': ['"Patrick Hand"', 'cursive', 'sans-serif'],
+                        'sans': ['system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'paper': '#fffdf9',
+                        'pencil': '#333333',
+                        'graphite': '#555555',
+                    },
+                    boxShadow: {
+                        'sketch': '2px 3px 0px 0px #333',
+                        'sketch-lg': '4px 5px 0px 0px #333',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #fffdf9;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        
+        .sketch-box {
+            background: white;
+            border: 2px solid #333;
+            border-radius: 2px 255px 3px 25px / 255px 5px 225px 3px;
+            position: relative;
+        }
+
+        .sketch-select {
+            border: none;
+            border-bottom: 2px solid #333;
+            background: transparent;
+            padding: 0.5rem 0;
+            outline: none;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            width: 100%;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 1em;
+        }
+        .sketch-select:focus {
+            border-bottom-width: 3px;
+            border-color: #000;
+        }
+
+        .sketch-input {
+            border: none;
+            border-bottom: 2px solid #333;
+            background: transparent;
+            padding: 0.5rem 0;
+            outline: none;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .sketch-btn {
+            background: #333;
+            color: white;
+            border: 2px solid #333;
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+            font-family: 'Patrick Hand', cursive;
+            transition: all 0.1s;
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.2);
+        }
+        .sketch-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+        }
+        .sketch-btn:active {
+            transform: scale(0.98);
+            box-shadow: none;
+        }
+
+        .sketch-btn-outline {
+            background: transparent;
+            color: #333;
+            border: 2px dashed #333;
+        }
+        .sketch-btn-outline:hover {
+            background: rgba(0,0,0,0.05);
+            border-style: solid;
+        }
+
+        .icon-svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .city-tag {
+            background: #fff;
+            border: 1px solid #333;
+            padding: 4px 10px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1rem;
+            transform: rotate(-2deg);
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .city-tag:hover {
+            transform: rotate(0deg) scale(1.05);
+            background: #f0f0f0;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+        }
+
+        .status-toast {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 0.9rem;
+            z-index: 100;
+            display: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .route-segment {
+            position: relative;
+            padding-left: 24px;
+            padding-bottom: 16px;
+            border-left: 2px dashed #ccc;
+        }
+        .route-segment:last-child {
+            border-left: none;
+            padding-bottom: 0;
+        }
+        .route-dot {
+            position: absolute;
+            left: -7px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid #333;
+            background: white;
+        }
+        .route-dot.start { background: #333; }
+        .route-dot.transfer { background: #fbbf24; border-color: #333; }
+        .route-dot.end { background: #333; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:system-ui, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-bottom-4{bottom:-1rem}.-top-3{top:-0.75rem}.left-1\/2{left:50%}.z-40{z-index:40}.z-50{z-index:50}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-2{margin-left:0.5rem}.mr-1{margin-right:0.25rem}.mt-10{margin-top:2.5rem}.mt-2{margin-top:0.5rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-6{height:1.5rem}.max-h-\[90vh\]{max-height:90vh}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-32{width:8rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-full{width:100%}.w-24{width:6rem}.w-6{width:1.5rem}.min-w-\[100px\]{min-width:100px}.max-w-2xl{max-width:42rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.flex-\[2\]{flex:2}.flex-\[1\.5\]{flex:1.5}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes fadeIn{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}.animate-fade-in{animation:fadeIn 0.6s ease-out forwards}.flex-col{flex-direction:column}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-y-auto{overflow-y:auto}.rounded-full{border-radius:9999px}.rounded-t-lg{border-top-left-radius:0.5rem;border-top-right-radius:0.5rem}.border{border-width:1px}.border-2{border-width:2px}.border-b-2{border-bottom-width:2px}.border-t-2{border-top-width:2px}.border-dashed{border-style:dashed}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-pencil{--tw-border-opacity:1;border-color:rgb(51 51 51 / var(--tw-border-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-paper{--tw-bg-opacity:1;background-color:rgb(255 253 249 / var(--tw-bg-opacity, 1))}.bg-pencil\/30{background-color:rgb(51 51 51 / 0.3)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-pencil{--tw-bg-opacity:1;background-color:rgb(51 51 51 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.pb-20{padding-bottom:5rem}.pb-1{padding-bottom:0.25rem}.pl-2{padding-left:0.5rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-sans{font-family:system-ui, sans-serif}.font-hand{font-family:"Patrick Hand", cursive, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-7xl{font-size:4.5rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-normal{font-weight:400}.tracking-tighter{letter-spacing:-0.05em}.tracking-wide{letter-spacing:0.025em}.text-pencil{--tw-text-opacity:1;color:rgb(51 51 51 / var(--tw-text-opacity, 1))}.text-graphite{--tw-text-opacity:1;color:rgb(85 85 85 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-pencil\/20{color:rgb(51 51 51 / 0.2)}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.decoration-pencil{-webkit-text-decoration-color:#333333;text-decoration-color:#333333}.decoration-wavy{-webkit-text-decoration-style:wavy;text-decoration-style:wavy}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sketch{--tw-shadow:2px 3px 0px 0px #333;--tw-shadow-colored:2px 3px 0px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sketch-lg{--tw-shadow:4px 5px 0px 0px #333;--tw-shadow-colored:4px 5px 0px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-pencil:hover{--tw-bg-opacity:1;background-color:rgb(51 51 51 / var(--tw-bg-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}@media (min-width: 640px){.sm\:grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:p-8{padding:2rem}}</style></head>
+<body class="text-pencil font-sans min-h-screen flex flex-col items-center pb-20 relative">
+
+    <div id="toast" class="status-toast"></div>
+
+    <header class="w-full py-4 px-6 flex justify-between items-center z-40">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 border-2 border-pencil flex items-center justify-center font-hand text-2xl font-bold rounded-full bg-white shadow-sketch">
+                M
+            </div>
+            <h1 class="font-hand text-2xl font-bold tracking-wide text-pencil">MiddlePoint</h1>
+        </div>
+        <div class="flex gap-4">
+            <button onclick="downloadApp()" class="font-hand text-xl hover:underline decoration-wavy decoration-pencil flex items-center gap-1">
+                <span>💾</span> 保存
+            </button>
+            <button onclick="showAboutModal()" class="font-hand text-xl hover:underline decoration-wavy decoration-pencil">关于</button>
+        </div>
+    </header>
+
+    <main class="w-full max-w-2xl px-4 mt-6">
+        <section class="text-center mb-10 relative">
+            <h2 class="font-hand text-7xl font-bold mb-2 text-pencil tracking-tighter">
+                聚点
+            </h2>
+            <div class="flex justify-center items-center gap-3 mt-2">
+                <p class="font-hand text-xl text-graphite">寻找大家的“时间中心”</p>
+                <div class="relative group">
+                    <span class="city-tag">
+                        <svg class="icon-svg w-4 h-4 mr-1" viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span id="city-display">成都</span>
+                    </span>
+                </div>
+            </div>
+            <svg class="absolute left-1/2 -translate-x-1/2 -bottom-4 w-32 h-4 text-pencil/20" viewBox="0 0 200 10">
+                <path d="M0 5 Q 100 15 200 5" stroke="currentColor" stroke-width="3" fill="none"></path>
+            </svg>
+        </section>
+
+        <!-- 输入区域 -->
+        <section class="sketch-box p-6 md:p-8 mb-10 shadow-sketch-lg animate-fade-in">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-pencil bg-white shadow-sm"></div>
+
+            <div id="friends-list" class="space-y-6"><div class="group relative flex flex-col gap-2">
+                    <div class="flex justify-between items-end px-1">
+                        <label class="font-hand font-bold text-xl flex items-center gap-2 text-pencil">
+                            <span class="w-6 h-6 rounded-full border border-pencil flex items-center justify-center text-sm bg-pencil text-white">
+                                我
+                            </span>
+                            我
+                        </label>
+                        
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <div class="flex-1 min-w-[100px]">
+                            <select class="sketch-select" onchange="updateFriend(1, 'line', this.value)"><option value="" disabled="">选择线路</option><option value="1号线" selected="">1号线</option><option value="2号线">2号线</option><option value="3号线">3号线</option><option value="4号线">4号线</option><option value="5号线">5号线</option><option value="6号线">6号线</option><option value="7号线">7号线</option><option value="8号线">8号线</option><option value="9号线">9号线</option><option value="10号线">10号线</option><option value="13号线">13号线</option><option value="17号线">17号线</option><option value="18号线">18号线</option><option value="19号线">19号线</option></select>
+                        </div>
+                        <div class="flex-[1.5]">
+                            <select class="sketch-select" onchange="updateFriend(1, 'station', this.value)"><option value="" disabled="">选择站点</option><option value="韦家碾">韦家碾</option><option value="升仙湖">升仙湖</option><option value="火车北站">火车北站</option><option value="人民北路">人民北路</option><option value="文殊院">文殊院</option><option value="骡马市">骡马市</option><option value="天府广场">天府广场</option><option value="锦江宾馆">锦江宾馆</option><option value="华西坝">华西坝</option><option value="省体育馆">省体育馆</option><option value="倪家桥">倪家桥</option><option value="桐梓林">桐梓林</option><option value="火车南站">火车南站</option><option value="高新">高新</option><option value="金融城">金融城</option><option value="孵化园">孵化园</option><option value="锦城广场">锦城广场</option><option value="世纪城" selected="">世纪城</option><option value="天府三街">天府三街</option><option value="天府五街">天府五街</option><option value="华府大道">华府大道</option><option value="四河">四河</option><option value="广都">广都</option><option value="五根松">五根松</option><option value="科学城">科学城</option></select>
+                        </div>
+                        <div class="w-24">
+                            <input type="time" value="18:30" oninput="updateFriend(1, 'time', this.value)" class="sketch-input">
+                        </div>
+                    </div>
+                </div><div class="group relative flex flex-col gap-2">
+                    <div class="flex justify-between items-end px-1">
+                        <label class="font-hand font-bold text-xl flex items-center gap-2 text-pencil">
+                            <span class="w-6 h-6 rounded-full border border-pencil flex items-center justify-center text-sm bg-white">
+                                A
+                            </span>
+                            朋友 A
+                        </label>
+                        
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <div class="flex-1 min-w-[100px]">
+                            <select class="sketch-select" onchange="updateFriend(2, 'line', this.value)"><option value="" disabled="">选择线路</option><option value="1号线">1号线</option><option value="2号线" selected="">2号线</option><option value="3号线">3号线</option><option value="4号线">4号线</option><option value="5号线">5号线</option><option value="6号线">6号线</option><option value="7号线">7号线</option><option value="8号线">8号线</option><option value="9号线">9号线</option><option value="10号线">10号线</option><option value="13号线">13号线</option><option value="17号线">17号线</option><option value="18号线">18号线</option><option value="19号线">19号线</option></select>
+                        </div>
+                        <div class="flex-[1.5]">
+                            <select class="sketch-select" onchange="updateFriend(2, 'station', this.value)"><option value="" disabled="">选择站点</option><option value="犀浦" selected="">犀浦</option><option value="天河路">天河路</option><option value="百草路">百草路</option><option value="金科北路">金科北路</option><option value="迎宾大道">迎宾大道</option><option value="茶店子客运站">茶店子客运站</option><option value="羊犀立交">羊犀立交</option><option value="一品天下">一品天下</option><option value="蜀汉路东">蜀汉路东</option><option value="白果林">白果林</option><option value="中医大省医院">中医大省医院</option><option value="通惠门">通惠门</option><option value="人民公园">人民公园</option><option value="天府广场">天府广场</option><option value="春熙路">春熙路</option><option value="东门大桥">东门大桥</option><option value="牛王庙">牛王庙</option><option value="牛市口">牛市口</option><option value="东大路">东大路</option><option value="塔子山公园">塔子山公园</option><option value="成都东客站">成都东客站</option><option value="成渝立交">成渝立交</option><option value="惠王陵">惠王陵</option><option value="洪河">洪河</option><option value="成都行政学院">成都行政学院</option><option value="大面铺">大面铺</option><option value="连山坡">连山坡</option><option value="界牌">界牌</option><option value="书房">书房</option><option value="龙平路">龙平路</option><option value="龙泉驿">龙泉驿</option></select>
+                        </div>
+                        <div class="w-24">
+                            <input type="time" value="18:00" oninput="updateFriend(2, 'time', this.value)" class="sketch-input">
+                        </div>
+                    </div>
+                </div></div>
+
+            <div class="mt-10 flex gap-4 pt-6 border-t-2 border-dashed border-gray-200">
+                <button onclick="addFriend()" class="flex-1 py-3 text-xl sketch-btn sketch-btn-outline flex justify-center items-center gap-2">
+                    <svg class="icon-svg w-5 h-5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg>
+                    <span>加人</span>
+                </button>
+                <button onclick="calculate()" id="calc-btn" class="flex-[2] py-3 text-xl sketch-btn flex justify-center items-center gap-2 shadow-sketch">
+                    <svg class="icon-svg w-5 h-5" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                    <span>计算聚点</span>
+                </button>
+            </div>
+        </section>
+
+        <div id="results-area" class="hidden animate-fade-in">
+            
+            <h3 class="font-hand text-2xl font-bold mb-4 pl-2 flex items-center gap-2">
+                推荐汇合站
+                <span class="text-sm font-normal text-gray-500 ml-2">(点击卡片查看路线)</span>
+            </h3>
+            
+            <div id="recommendation-list" class="space-y-4 mb-8"></div>
+
+            <section class="sketch-box p-6 mb-8">
+                <h3 class="font-hand text-2xl font-bold mb-4 flex items-center gap-2">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    通勤时间对比 (首选方案)
+                </h3>
+                <div class="chart-container">
+                    <canvas id="fairnessChart"></canvas>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="font-hand text-3xl font-bold mb-6 pl-2 flex items-center gap-2">
+                    <svg class="icon-svg w-8 h-8" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                    附近推荐
+                </h3>
+                <div id="poi-list" class="grid gap-4 sm:grid-cols-1"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 弹窗 -->
+    <div id="route-modal" class="fixed inset-0 bg-pencil/30 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-all">
+        <div class="sketch-box w-full max-w-lg shadow-2xl relative flex flex-col max-h-[90vh] animate-fade-in">
+            <div class="p-5 border-b-2 border-dashed border-gray-200 flex justify-between items-center bg-white rounded-t-lg">
+                <div>
+                    <h3 class="font-hand text-3xl font-bold" id="modal-title">路线详情</h3>
+                    <p class="font-hand text-gray-500 text-sm" id="modal-subtitle">详细乘车方案</p>
+                </div>
+                <button onclick="closeRouteModal()" class="w-10 h-10 flex items-center justify-center border-2 border-pencil rounded-full hover:bg-pencil hover:text-white transition-colors font-hand text-2xl pb-1">×</button>
+            </div>
+            <div id="route-details-content" class="p-6 overflow-y-auto space-y-6 bg-paper"></div>
+        </div>
+    </div>
+
+    <div id="about-modal" class="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="sketch-box w-full max-w-md shadow-2xl relative p-8 text-center">
+            <h3 class="font-hand text-3xl font-bold mb-4">关于 聚点</h3>
+            <div class="text-left font-hand text-lg space-y-4 bg-gray-50 p-4 border border-gray-200">
+                <p>专为成都朋友聚会打造。</p>
+                <p><b>时间优先：</b> 我们认为让大家都不累比商圈更重要。算法优先推荐通勤时间方差最小的站点。</p>
+                <p><b>智能算法：</b> 采用 Dijkstra 算法计算多源最短路径，并包含 5 分钟的换乘惩罚。</p>
+            </div>
+            <button onclick="closeAboutModal()" class="mt-6 w-full py-2 sketch-btn text-xl">关 闭</button>
+        </div>
+    </div>
+
+    <script>
+        const CHENGDU_METRO_DATA = {
+            "1号线": [
+                {n:"韦家碾",t:2}, {n:"升仙湖",t:3}, {n:"火车北站",t:2}, {n:"人民北路",t:2}, {n:"文殊院",t:2}, {n:"骡马市",t:2}, {n:"天府广场",t:2}, {n:"锦江宾馆",t:2}, {n:"华西坝",t:2}, {n:"省体育馆",t:2}, {n:"倪家桥",t:2}, {n:"桐梓林",t:2}, {n:"火车南站",t:3}, {n:"高新",t:2}, {n:"金融城",t:2}, {n:"孵化园",t:2}, {n:"锦城广场",t:2}, {n:"世纪城",t:3}, {n:"天府三街",t:2}, {n:"天府五街",t:2}, {n:"华府大道",t:3}, {n:"四河",t:3}, {n:"广都",t:3}, {n:"五根松",t:2}, {n:"科学城",t:2}
+            ],
+            "2号线": [
+                {n:"犀浦",t:3}, {n:"天河路",t:2}, {n:"百草路",t:2}, {n:"金科北路",t:3}, {n:"迎宾大道",t:2}, {n:"茶店子客运站",t:2}, {n:"羊犀立交",t:2}, {n:"一品天下",t:2}, {n:"蜀汉路东",t:2}, {n:"白果林",t:2}, {n:"中医大省医院",t:2}, {n:"通惠门",t:2}, {n:"人民公园",t:2}, {n:"天府广场",t:2}, {n:"春熙路",t:3}, {n:"东门大桥",t:2}, {n:"牛王庙",t:2}, {n:"牛市口",t:2}, {n:"东大路",t:2}, {n:"塔子山公园",t:2}, {n:"成都东客站",t:3}, {n:"成渝立交",t:3}, {n:"惠王陵",t:3}, {n:"洪河",t:3}, {n:"成都行政学院",t:4}, {n:"大面铺",t:4}, {n:"连山坡",t:3}, {n:"界牌",t:3}, {n:"书房",t:3}, {n:"龙平路",t:3}, {n:"龙泉驿",t:0}
+            ],
+            "3号线": [
+                {n:"成都医学院",t:3}, {n:"石油大学",t:2}, {n:"钟楼",t:2}, {n:"马超西路",t:2}, {n:"团结新区",t:2}, {n:"锦水河",t:3}, {n:"三河场",t:3}, {n:"金华寺东路",t:3}, {n:"植物园",t:2}, {n:"军区总医院",t:2}, {n:"熊猫大道",t:3}, {n:"动物园",t:2}, {n:"昭觉寺南路",t:2}, {n:"驷马桥",t:2}, {n:"李家沱",t:2}, {n:"前锋路",t:2}, {n:"红星桥",t:2}, {n:"市二医院",t:2}, {n:"春熙路",t:2}, {n:"新南门",t:2}, {n:"磨子桥",t:2}, {n:"省体育馆",t:2}, {n:"衣冠庙",t:2}, {n:"高升桥",t:2}, {n:"红牌楼",t:3}, {n:"太平园",t:2}, {n:"川藏立交",t:3}, {n:"武侯立交",t:2}, {n:"武青南路",t:3}, {n:"双凤桥",t:2}, {n:"龙桥路",t:3}, {n:"航都大街",t:3}, {n:"迎春桥",t:2}, {n:"东升",t:3}, {n:"双流广场",t:3}, {n:"三里坝",t:2}, {n:"双流西站",t:0}
+            ],
+            "4号线": [
+                {n:"万盛",t:3}, {n:"杨柳河",t:3}, {n:"凤溪河",t:3}, {n:"南熏大道",t:2}, {n:"光华公园",t:2}, {n:"涌泉",t:3}, {n:"凤凰大街",t:2}, {n:"马厂坝",t:3}, {n:"非遗博览园",t:3}, {n:"蔡桥",t:2}, {n:"中坝",t:2}, {n:"成都西站",t:3}, {n:"清江西路",t:2}, {n:"文化宫",t:2}, {n:"西南财大",t:2}, {n:"草堂北路",t:2}, {n:"中医大省医院",t:2}, {n:"宽窄巷子",t:2}, {n:"骡马市",t:2}, {n:"太升南路",t:2}, {n:"市二医院",t:2}, {n:"玉双路",t:2}, {n:"双桥路",t:2}, {n:"万年场",t:3}, {n:"槐树店",t:2}, {n:"来龙",t:3}, {n:"十陵",t:3}, {n:"成都大学",t:3}, {n:"明蜀王陵",t:3}, {n:"西河",t:0}
+            ],
+            "5号线": [
+                {n:"华桂路",t:3}, {n:"柏水场",t:3}, {n:"廖家湾",t:3}, {n:"北部商贸城",t:2}, {n:"幸福桥",t:2}, {n:"大丰",t:2}, {n:"石犀公园",t:2}, {n:"皇花园",t:2}, {n:"古柏",t:2}, {n:"泉水路",t:3}, {n:"洞子口",t:2}, {n:"福宁路",t:2}, {n:"五块石",t:2}, {n:"赛云台",t:2}, {n:"北站西二路",t:2}, {n:"西北桥",t:2}, {n:"花牌坊",t:2}, {n:"抚琴",t:2}, {n:"中医大省医院",t:2}, {n:"省骨科医院",t:2}, {n:"高升桥",t:2}, {n:"科园",t:2}, {n:"九兴大道",t:2}, {n:"神仙树",t:3}, {n:"石羊立交",t:2}, {n:"市一医院",t:2}, {n:"交子大道",t:2}, {n:"锦城大道",t:2}, {n:"锦城湖",t:2}, {n:"大源",t:2}, {n:"民乐",t:2}, {n:"骑龙",t:3}, {n:"警官学院",t:3}, {n:"二江寺",t:3}, {n:"南湖立交",t:2}, {n:"怡心湖",t:3}, {n:"龙马路",t:3}, {n:"回龙",t:0}
+            ],
+            "6号线": [
+                {n:"望丛祠",t:2}, {n:"郫筒",t:2}, {n:"犀浦",t:3}, {n:"梓潼宫",t:2}, {n:"金府",t:2}, {n:"西南交大",t:2}, {n:"沙湾",t:2}, {n:"人民北路",t:2}, {n:"梁家巷",t:2}, {n:"前锋路",t:2}, {n:"建设北路",t:2}, {n:"牛王庙",t:2}, {n:"东光",t:2}, {n:"琉璃场",t:2}, {n:"金融城东",t:2}, {n:"陆肖",t:2}, {n:"西博城",t:2}, {n:"兰家沟",t:0}
+            ],
+            "7号线": [
+                {n:"火车北站",t:2}, {n:"驷马桥",t:2}, {n:"府青路",t:2}, {n:"八里庄",t:2}, {n:"二仙桥",t:2}, {n:"理工大学",t:2}, {n:"崔家店",t:2}, {n:"槐树店",t:2}, {n:"迎晖路",t:2}, {n:"成都东客站",t:3}, {n:"大观",t:2}, {n:"狮子山",t:2}, {n:"四川师大",t:2}, {n:"琉璃场",t:2}, {n:"三瓦窑",t:2}, {n:"火车南站",t:3}, {n:"神仙树",t:2}, {n:"高朋大道",t:2}, {n:"太平园",t:2}, {n:"武侯大道",t:2}, {n:"龙爪堰",t:2}, {n:"东坡路",t:2}, {n:"文化宫",t:2}, {n:"金沙博物馆",t:2}, {n:"一品天下",t:2}, {n:"茶店子",t:2}, {n:"花照壁",t:2}, {n:"西南交大",t:2}, {n:"九里堤",t:2}, {n:"北站西二路",t:2}, {n:"火车北站",t:0}
+            ],
+            "8号线": [
+                {n:"十里店",t:2}, {n:"理工大学",t:2}, {n:"东郊记忆",t:2}, {n:"杉板桥",t:2}, {n:"万年路",t:2}, {n:"双桥路",t:2}, {n:"东大路",t:2}, {n:"净居寺",t:2}, {n:"东光",t:2}, {n:"东湖公园",t:2}, {n:"川大望江校区",t:2}, {n:"倪家桥",t:2}, {n:"芳草街",t:2}, {n:"永丰",t:2}, {n:"九兴大道",t:2}, {n:"石羊",t:2}, {n:"莲花",t:0}
+            ],
+            "9号线": [
+                {n:"金融城东",t:2}, {n:"心岛",t:2}, {n:"孵化园",t:2}, {n:"锦城大道",t:2}, {n:"太平寺",t:2}, {n:"华兴",t:2}, {n:"簇桥",t:2}, {n:"武青南路",t:2}, {n:"机投桥",t:2}, {n:"培风",t:2}, {n:"成都西站",t:2}, {n:"黄田坝",t:0}
+            ],
+            "10号线": [
+                {n:"太平园",t:2}, {n:"簇锦",t:2}, {n:"华兴",t:3}, {n:"金花",t:3}, {n:"双流机场1航站楼",t:3}, {n:"双流机场2航站楼",t:3}, {n:"双流西站",t:4}, {n:"应天寺",t:4}, {n:"黄水",t:4}, {n:"花源",t:4}, {n:"新津站",t:4}, {n:"花桥",t:4}, {n:"五津",t:4}, {n:"儒林路",t:3}, {n:"刘家碾",t:3}, {n:"新平",t:0}
+            ],
+            "13号线": [
+                {n:"瓦窑滩",t:2}, {n:"万家湾",t:2}, {n:"培风",t:2}, {n:"东坡路",t:2}, {n:"青羊宫",t:2}, {n:"小南街",t:2}, {n:"华西坝",t:2}, {n:"新南门",t:2}, {n:"九眼桥",t:2}, {n:"三官堂",t:2}, {n:"净居寺",t:2}, {n:"四川师大",t:2}, {n:"三圣花乡",t:3}, {n:"龙华寺",t:0}
+            ],
+            "17号线": [
+                {n:"金星",t:3}, {n:"黄石",t:3}, {n:"市五医院",t:3}, {n:"凤溪河",t:2}, {n:"温泉大道",t:3}, {n:"明光",t:2}, {n:"九江北",t:3}, {n:"白佛桥",t:2}, {n:"机投桥",t:0}
+            ],
+            "18号线": [
+                {n:"火车南站",t:4}, {n:"孵化园",t:3}, {n:"锦城广场东",t:3}, {n:"世纪城",t:4}, {n:"海昌路",t:6}, {n:"西博城",t:5}, {n:"兴隆",t:5}, {n:"三岔",t:12}, {n:"天府机场1号2号航站楼",t:5}, {n:"天府机场北",t:0}
+            ],
+            "19号线": [
+                {n:"金星",t:3}, {n:"黄石",t:2}, {n:"市五医院",t:3}, {n:"凤溪河",t:2}, {n:"温泉大道",t:3}, {n:"明光",t:2}, {n:"九江北",t:3}, {n:"龙桥路",t:3}, {n:"双流机场2航站楼",t:4}, {n:"龙港",t:3}, {n:"温家山",t:3}, {n:"怡心湖",t:3}, {n:"正兴湾",t:2}, {n:"红莲",t:3}, {n:"天府商务区",t:3}, {n:"天府站",t:0}
+            ]
+        };
+
+        const HOT_SPOTS = {
+            "春熙路": 10, "天府广场": 9, "太升南路": 8, "宽窄巷子": 9, "省体育馆": 8, "建设北路": 8, 
+            "万年场": 7, "桐梓林": 8, "金融城": 8, "世纪城": 7, "一品天下": 7, "东郊记忆": 8, "九眼桥": 9
+        };
+
+        const STATION_POIS_DATA = {
+            "春熙路": [
+                { name: "IFS 国际金融中心", type: "商圈", dist: "0m", tag: "大熊猫" },
+                { name: "远洋太古里", type: "逛街", dist: "200m", tag: "潮流地标" },
+                { name: "龙抄手(总店)", type: "老字号", dist: "300m", tag: "成都名吃" },
+                { name: "群光广场", type: "购物", dist: "150m", tag: "美食多" }
+            ],
+            "天府广场": [
+                { name: "成都博物馆", type: "文化", dist: "100m", tag: "需预约" },
+                { name: "四川科技馆", type: "科普", dist: "200m", tag: "带娃必去" },
+                { name: "人民公园", type: "休闲", dist: "500m", tag: "鹤鸣茶社" },
+                { name: "今站购物中心", type: "购物", dist: "50m", tag: "地下枢纽" }
+            ],
+            "宽窄巷子": [
+                { name: "宽窄巷子景区", type: "景点", dist: "100m", tag: "游客打卡" },
+                { name: "泡桐树街", type: "休闲", dist: "300m", tag: "文艺小资" },
+                { name: "魁星楼街", type: "美食", dist: "400m", tag: "吃货必去" }
+            ],
+            "省体育馆": [
+                { name: "来福士广场", type: "商圈", dist: "100m", tag: "潮流" },
+                { name: "玉林路小酒馆", type: "酒吧", dist: "800m", tag: "赵雷" },
+                { name: "电脑城", type: "数码", dist: "200m", tag: "老地标" }
+            ],
+            "建设北路": [
+                { name: "建设巷小吃街", type: "小吃", dist: "50m", tag: "排队王" },
+                { name: "东郊记忆", type: "景点", dist: "800m", tag: "工业风" },
+                { name: "SM广场", type: "购物", dist: "300m", tag: "生活" }
+            ],
+            "世纪城": [
+                { name: "环球中心", type: "商圈", dist: "500m", tag: "巨无霸" },
+                { name: "桂溪生态公园", type: "公园", dist: "300m", tag: "绿道" }
+            ],
+            "一品天下": [
+                { name: "一品天下美食街", type: "美食", dist: "100m", tag: "高端川菜" },
+                { name: "茶店子", type: "生活", dist: "500m", tag: "老西门" }
+            ],
+            "文殊院": [
+                { name: "文殊院", type: "寺庙", dist: "100m", tag: "清净" },
+                { name: "宫廷糕点铺", type: "小吃", dist: "200m", tag: "排队买" },
+                { name: "洞子口张老二凉粉", type: "小吃", dist: "150m", tag: "甜水面" }
+            ],
+            "骡马市": [
+                { name: "陈麻婆豆腐(总店)", type: "川菜", dist: "200m", tag: "正宗" },
+                { name: "天府广场", type: "景点", dist: "800m", tag: "中心" }
+            ],
+            "华西坝": [
+                { name: "华西医大校区", type: "文化", dist: "100m", tag: "历史建筑" },
+                { name: "耍都美食广场", type: "夜宵", dist: "500m", tag: "夜生活" }
+            ],
+            "桐梓林": [
+                { name: "欧洲风情街", type: "休闲", dist: "100m", tag: "西餐多" },
+                { name: "凯莱帝景", type: "生活", dist: "200m", tag: "老外多" }
+            ],
+            "火车南站": [
+                { name: "凯德天府", type: "商圈", dist: "100m", tag: "购物" },
+                { name: "苏宁广场", type: "商圈", dist: "200m", tag: "数码" },
+                { name: "宜家家居", type: "购物", dist: "500m", tag: "肉丸" }
+            ],
+            "高新": [
+                { name: "凯德广场·新南", type: "商圈", dist: "100m", tag: "方便" }
+            ],
+            "金融城": [
+                { name: "银泰in99", type: "高端", dist: "200m", tag: "奢华" },
+                { name: "天府双子塔", type: "地标", dist: "300m", tag: "灯光秀" },
+                { name: "交子公园", type: "公园", dist: "500m", tag: "夜景" }
+            ],
+            "中医大省医院": [
+                { name: "四川省博物馆", type: "文化", dist: "800m", tag: "历史" },
+                { name: "浣花溪公园", type: "公园", dist: "900m", tag: "环境好" },
+                { name: "青羊宫", type: "道观", dist: "600m", tag: "古迹" }
+            ],
+            "人民公园": [
+                { name: "鹤鸣茶社", type: "茶馆", dist: "100m", tag: "盖碗茶" },
+                { name: "成都美术馆", type: "艺术", dist: "200m", tag: "展览" }
+            ],
+            "东大路": [
+                { name: "环球汇WE CITY", type: "商圈", dist: "100m", tag: "新地标" },
+                { name: "ICC", type: "商圈", dist: "200m", tag: "购物" }
+            ],
+            "牛王庙": [
+                { name: "IBOX创意园", type: "园区", dist: "200m", tag: "集装箱" },
+                { name: "水碾河", type: "美食", dist: "500m", tag: "苍蝇馆子" }
+            ],
+            "动物园": [
+                { name: "成都动物园", type: "景点", dist: "50m", tag: "看熊猫" },
+                { name: "昭觉寺", type: "寺庙", dist: "100m", tag: "素斋" }
+            ],
+            "红牌楼": [
+                { name: "红牌楼广场", type: "购物", dist: "100m", tag: "老商圈" },
+                { name: "莱蒙都会", type: "商圈", dist: "300m", tag: "吃喝" }
+            ],
+            "太升南路": [
+                { name: "太升路通讯城", type: "数码", dist: "50m", tag: "手机" },
+                { name: "雄飞中心", type: "餐饮", dist: "200m", tag: "美食" }
+            ],
+            "万年场": [
+                { name: "万象城", type: "商圈", dist: "200m", tag: "超大" },
+                { name: "双桥子", type: "生活", dist: "500m", tag: "老成都" }
+            ],
+            "理工大学": [
+                { name: "成都自然博物馆", type: "科普", dist: "100m", tag: "恐龙" },
+                { name: "东风渠", type: "风景", dist: "200m", tag: "散步" }
+            ],
+            "狮子山": [
+                { name: "四川师范大学", type: "高校", dist: "200m", tag: "美女多" },
+                { name: "校园美食街", type: "小吃", dist: "300m", tag: "便宜" }
+            ],
+            "川师": [
+                { name: "校园南门", type: "美食", dist: "100m", tag: "夜市" }
+            ]
+        };
+
+        let METRO_GRAPH = {}; 
+
+        function buildGraph() {
+            METRO_GRAPH = {};
+            let stationToNodes = {};
+
+            for (let line in CHENGDU_METRO_DATA) {
+                let stations = CHENGDU_METRO_DATA[line];
+                for (let i = 0; i < stations.length; i++) {
+                    let st = stations[i];
+                    let nodeName = `${st.n}_${line}`;
+                    
+                    if (!METRO_GRAPH[nodeName]) METRO_GRAPH[nodeName] = [];
+                    if (!stationToNodes[st.n]) stationToNodes[st.n] = [];
+                    stationToNodes[st.n].push(nodeName);
+
+                    if (i < stations.length - 1) {
+                        let nextSt = stations[i+1];
+                        let nextNodeName = `${nextSt.n}_${line}`;
+                        let travelTime = st.t; 
+
+                        METRO_GRAPH[nodeName].push({ node: nextNodeName, weight: travelTime, line: line });
+                        if (!METRO_GRAPH[nextNodeName]) METRO_GRAPH[nextNodeName] = [];
+                        METRO_GRAPH[nextNodeName].push({ node: nodeName, weight: travelTime, line: line });
+                    }
+                }
+            }
+
+            for (let stationName in stationToNodes) {
+                let nodes = stationToNodes[stationName];
+                if (nodes.length > 1) {
+                    for (let i = 0; i < nodes.length; i++) {
+                        for (let j = i + 1; j < nodes.length; j++) {
+                            let u = nodes[i];
+                            let v = nodes[j];
+                            let transferCost = 5; 
+                            METRO_GRAPH[u].push({ node: v, weight: transferCost, type: 'transfer' });
+                            METRO_GRAPH[v].push({ node: u, weight: transferCost, type: 'transfer' });
+                        }
+                    }
+                }
+            }
+            console.log(`Graph built with ${Object.keys(METRO_GRAPH).length} nodes.`);
+        }
+
+        function dijkstra(startNodeName) {
+            let times = {};
+            let prev = {}; 
+            let pq = new PriorityQueue();
+
+            for (let node in METRO_GRAPH) {
+                times[node] = Infinity;
+            }
+            times[startNodeName] = 0;
+            pq.enqueue(startNodeName, 0);
+
+            while (!pq.isEmpty()) {
+                let { element: u, priority: uTime } = pq.dequeue();
+                if (uTime > times[u]) continue;
+
+                if (METRO_GRAPH[u]) {
+                    for (let edge of METRO_GRAPH[u]) {
+                        let v = edge.node;
+                        let weight = edge.weight;
+                        let alt = times[u] + weight;
+                        if (alt < times[v]) {
+                            times[v] = alt;
+                            prev[v] = u; 
+                            pq.enqueue(v, alt);
+                        }
+                    }
+                }
+            }
+            return { times, prev };
+        }
+
+        function tracePath(startNode, endPhysicalStation, prevMap, timesMap) {
+            let bestEndNode = null;
+            let minTime = Infinity;
+            
+            for (let node in timesMap) {
+                if (node.split('_')[0] === endPhysicalStation) {
+                    if (timesMap[node] < minTime) {
+                        minTime = timesMap[node];
+                        bestEndNode = node;
+                    }
+                }
+            }
+
+            if (!bestEndNode || minTime === Infinity) return null;
+
+            let path = [];
+            let curr = bestEndNode;
+            while (curr) {
+                path.unshift(curr);
+                if (curr === startNode) break;
+                curr = prevMap[curr];
+            }
+            
+            if (path[0] !== startNode) return null; 
+
+            let segments = [];
+            let currentSegment = { line: path[0].split('_')[1], stations: [], start: path[0].split('_')[0] };
+            
+            for (let i = 0; i < path.length - 1; i++) {
+                let u = path[i];
+                let v = path[i+1];
+                let uName = u.split('_')[0];
+                let vName = v.split('_')[0];
+                
+                if (uName === vName) {
+                    currentSegment.end = uName;
+                    currentSegment.count = currentSegment.stations.length;
+                    segments.push(currentSegment);
+                    
+                    let newLine = v.split('_')[1];
+                    currentSegment = { line: newLine, stations: [], start: vName };
+                } else {
+                    currentSegment.stations.push(vName);
+                }
+            }
+            currentSegment.end = path[path.length - 1].split('_')[0];
+            currentSegment.count = currentSegment.stations.length;
+            segments.push(currentSegment);
+
+            return { path, segments, totalTime: minTime };
+        }
+
+        class PriorityQueue {
+            constructor() { this.values = []; }
+            enqueue(element, priority) {
+                this.values.push({ element, priority });
+                this.sort();
+            }
+            dequeue() { return this.values.shift(); }
+            isEmpty() { return this.values.length === 0; }
+            sort() { this.values.sort((a, b) => a.priority - b.priority); }
+        }
+
+        let friends = [
+            { id: 1, name: '我', line: '1号线', station: '世纪城', time: '18:30' },
+            { id: 2, name: '朋友 A', line: '2号线', station: '犀浦', time: '18:00' }
+        ];
+        let chartInstance = null;
+        let topRecommendations = []; 
+
+        function init() {
+            if (document.getElementById('friends-list')) {
+                buildGraph(); 
+                renderFriends();
+            } else {
+                console.error("DOM not ready");
+            }
+        }
+
+        // 新增下载功能
+        function downloadApp() {
+            const element = document.createElement('a');
+            const file = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
+            element.href = URL.createObjectURL(file);
+            element.download = 'chengdu_meeting_point.html';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 3000);
+        }
+
+        function renderFriends() {
+            const container = document.getElementById('friends-list');
+            if (!container) return; 
+
+            container.innerHTML = '';
+
+            friends.forEach((friend, index) => {
+                const div = document.createElement('div');
+                div.className = "group relative flex flex-col gap-2";
+                
+                let lineOptions = `<option value="" disabled ${!friend.line ? 'selected' : ''}>选择线路</option>`;
+                for (let line in CHENGDU_METRO_DATA) {
+                    lineOptions += `<option value="${line}" ${friend.line === line ? 'selected' : ''}>${line}</option>`;
+                }
+
+                let stationOptions = `<option value="" disabled ${!friend.station ? 'selected' : ''}>选择站点</option>`;
+                if (friend.line && CHENGDU_METRO_DATA[friend.line]) {
+                    CHENGDU_METRO_DATA[friend.line].forEach(st => {
+                        stationOptions += `<option value="${st.n}" ${friend.station === st.n ? 'selected' : ''}>${st.n}</option>`;
+                    });
+                } else {
+                    stationOptions = `<option value="" disabled selected>请先选线路</option>`;
+                }
+
+                div.innerHTML = `
+                    <div class="flex justify-between items-end px-1">
+                        <label class="font-hand font-bold text-xl flex items-center gap-2 text-pencil">
+                            <span class="w-6 h-6 rounded-full border border-pencil flex items-center justify-center text-sm ${index===0 ? 'bg-pencil text-white' : 'bg-white'}">
+                                ${index === 0 ? '我' : String.fromCharCode(64 + index)}
+                            </span>
+                            ${friend.name}
+                        </label>
+                        ${friends.length > 2 ? `<button onclick="removeFriend(${friend.id})" class="text-sm font-hand text-gray-400 hover:text-red-600 underline decoration-wavy">移除</button>` : ''}
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <div class="flex-1 min-w-[100px]">
+                            <select class="sketch-select" onchange="updateFriend(${friend.id}, 'line', this.value)">${lineOptions}</select>
+                        </div>
+                        <div class="flex-[1.5]">
+                            <select class="sketch-select" onchange="updateFriend(${friend.id}, 'station', this.value)" ${!friend.line ? 'disabled' : ''}>${stationOptions}</select>
+                        </div>
+                        <div class="w-24">
+                            <input type="time" value="${friend.time}" oninput="updateFriend(${friend.id}, 'time', this.value)" class="sketch-input">
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function addFriend() {
+            const newId = Date.now();
+            const nextLetter = String.fromCharCode(65 + friends.length - 1); 
+            friends.push({ id: newId, name: `朋友 ${nextLetter}`, line: '', station: '', time: '18:00' });
+            renderFriends();
+        }
+
+        function removeFriend(id) {
+            if (friends.length <= 2) { showToast("至少需要两个人哦！"); return; }
+            friends = friends.filter(f => f.id !== id);
+            renderFriends();
+        }
+
+        function updateFriend(id, field, value) {
+            const friend = friends.find(f => f.id === id);
+            if (friend) {
+                friend[field] = value;
+                if (field === 'line') friend.station = '';
+                renderFriends();
+            }
+        }
+
+        function calculate() {
+            const isAllFilled = friends.every(f => f.line && f.station);
+            if (!isAllFilled) { showToast("请填好所有人的出发站点哦！"); return; }
+
+            const btn = document.getElementById('calc-btn');
+            btn.innerHTML = `<span class="animate-pulse">正在跑算法...</span>`;
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                performDijkstraCalculation();
+                btn.innerHTML = `<span>计算聚点</span>`;
+                btn.disabled = false;
+            }, 300);
+        }
+
+        function performDijkstraCalculation() {
+            let friendTravelData = []; 
+            
+            friends.forEach(f => {
+                let startNode = `${f.station}_${f.line}`;
+                let result = dijkstra(startNode);
+                friendTravelData.push({ ...f, ...result, startNode: startNode });
+            });
+
+            let scores = [];
+            let allStations = new Set();
+            for (let line in CHENGDU_METRO_DATA) {
+                CHENGDU_METRO_DATA[line].forEach(s => allStations.add(s.n));
+            }
+
+            for (let candidateStation of allStations) {
+                let totalTime = 0;
+                let maxTime = 0;
+                let reachable = true;
+                let details = [];
+
+                for (let data of friendTravelData) {
+                    let minTimeToStation = Infinity;
+                    for (let node in data.times) {
+                        if (node.split('_')[0] === candidateStation) {
+                            if (data.times[node] < minTimeToStation) minTimeToStation = data.times[node];
+                        }
+                    }
+
+                    if (minTimeToStation === Infinity) { reachable = false; break; }
+                    totalTime += minTimeToStation;
+                    if (minTimeToStation > maxTime) maxTime = minTimeToStation;
+                    
+                    details.push({ 
+                        name: data.name, 
+                        time: minTimeToStation,
+                        startNode: data.startNode,
+                        targetStation: candidateStation,
+                        prevMap: data.prev,
+                        timesMap: data.times
+                    });
+                }
+
+                if (reachable) {
+                    let timeScore = (maxTime * 2) + totalTime; 
+                    let commercialBonus = (HOT_SPOTS[candidateStation] || 0) * 1; 
+                    let finalScore = timeScore - commercialBonus;
+
+                    scores.push({
+                        station: candidateStation,
+                        avgTime: Math.round(totalTime / friends.length),
+                        maxTime: maxTime,
+                        finalScore: finalScore,
+                        details: details
+                    });
+                }
+            }
+
+            scores.sort((a, b) => a.finalScore - b.finalScore);
+            topRecommendations = scores.slice(0, 3);
+
+            renderRecommendations();
+            
+            document.getElementById('results-area').classList.remove('hidden');
+            document.getElementById('results-area').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function renderRecommendations() {
+            const list = document.getElementById('recommendation-list');
+            list.innerHTML = '';
+
+            topRecommendations.forEach((rec, index) => {
+                let isHot = HOT_SPOTS[rec.station] ? true : false;
+                
+                const div = document.createElement('div');
+                div.className = `p-5 rounded cursor-pointer transition-all duration-200 sketch-box hover:scale-[1.01] bg-white text-pencil group`;
+                div.onclick = () => showRouteDetails(index);
+
+                div.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-sm font-hand border border-pencil px-1.5 rounded">${index === 0 ? '最佳推荐' : '备选方案 ' + (index+1)}</span>
+                                ${isHot ? '<span class="text-xs bg-yellow-300 text-pencil px-1 rounded font-bold">热门商圈</span>' : ''}
+                            </div>
+                            <h4 class="text-3xl font-bold font-hand group-hover:underline decoration-wavy">${rec.station}</h4>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold font-hand">${rec.avgTime}<span class="text-sm font-normal"> 分钟</span></div>
+                            <div class="text-xs opacity-70">平均通勤</div>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-sm font-hand opacity-80 border-t border-gray-200 pt-2 flex justify-between items-center">
+                        <span>最远的朋友耗时: ${rec.maxTime} 分钟</span>
+                        <span class="text-pencil underline">点击查看路线详情 →</span>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+
+            renderChart(topRecommendations[0]);
+            renderPois(topRecommendations[0].station);
+        }
+
+        function renderPois(stationName) {
+            const poiContainer = document.getElementById('poi-list');
+            poiContainer.innerHTML = '';
+            
+            let displayPOIs = STATION_POIS_DATA[stationName];
+            
+            // 如果没有数据，显示暂无
+            if (!displayPOIs || displayPOIs.length === 0) {
+                poiContainer.innerHTML = '<div class="text-center text-gray-400 font-hand py-4 border-2 border-dashed border-gray-200 rounded">📭 暂无该站点收录的商圈/景点数据</div>';
+                return;
+            }
+
+            displayPOIs.forEach(poi => {
+                const el = document.createElement('div');
+                el.className = "bg-white border-b-2 border-gray-100 p-4 hover:bg-gray-50 transition-colors cursor-pointer flex justify-between items-center group";
+                el.innerHTML = `
+                    <div>
+                        <div class="font-bold text-xl font-hand group-hover:translate-x-1 transition-transform">${poi.name}</div>
+                        <div class="text-xs text-gray-500 font-hand mt-1 flex gap-2">
+                            <span class="bg-gray-100 px-1 rounded">${stationName}附近</span>
+                            <span>${poi.type}</span>
+                            <span>•</span>
+                            <span>${poi.dist}</span>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs text-gray-400 font-hand border border-gray-200 px-1 rounded">${poi.tag}</div>
+                    </div>
+                `;
+                poiContainer.appendChild(el);
+            });
+        }
+
+        function renderChart(data) {
+            const ctx = document.getElementById('fairnessChart').getContext('2d');
+            if (chartInstance) chartInstance.destroy();
+
+            const labels = data.details.map(d => d.name);
+            const times = data.details.map(d => d.time);
+            
+            Chart.defaults.font.family = "'Patrick Hand', cursive";
+            Chart.defaults.color = '#333';
+
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '通勤时间 (分钟)',
+                        data: times,
+                        backgroundColor: '#333', 
+                        borderColor: '#333',
+                        borderWidth: 2,
+                        barThickness: 30,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: '#eee', borderDash: [4, 4] }, border: { display: false } },
+                        x: { grid: { display: false }, border: { display: true, width: 2, color: '#333' } }
+                    }
+                }
+            });
+        }
+
+        function showRouteDetails(index) {
+            const modal = document.getElementById('route-modal');
+            const content = document.getElementById('route-details-content');
+            
+            let rec = topRecommendations[index];
+            document.getElementById('modal-title').innerText = `${rec.station} 路线详情`;
+            document.getElementById('modal-subtitle').innerText = `最远耗时 ${rec.maxTime} 分钟`;
+
+            renderChart(rec);
+            renderPois(rec.station);
+
+            content.innerHTML = rec.details.map(d => {
+                let routeInfo = tracePath(d.startNode, d.targetStation, d.prevMap, d.timesMap);
+                let segmentsHtml = '';
+
+                if (routeInfo && routeInfo.segments.length > 0) {
+                    segmentsHtml = routeInfo.segments.map((seg, i) => {
+                        let dotClass = i === 0 ? 'start' : 'transfer';
+                        let action = i === 0 ? `从 <b>${seg.start}</b> 出发` : `在 <b>${seg.start}</b> 换乘`;
+                        
+                        return `
+                        <div class="route-segment font-hand">
+                            <div class="route-dot ${dotClass}"></div>
+                            <div class="text-lg text-pencil">${action} <span class="bg-gray-100 text-sm px-1 rounded ml-1 border border-gray-300">${seg.line}</span></div>
+                            <div class="text-sm text-gray-500 mt-1">乘坐 ${seg.count} 站 到达 ${seg.end}</div>
+                        </div>
+                        `;
+                    }).join('');
+                    
+                    segmentsHtml += `
+                        <div class="route-segment font-hand" style="border-left:none;">
+                            <div class="route-dot end"></div>
+                            <div class="text-lg font-bold text-pencil">抵达终点 ${rec.station}</div>
+                        </div>
+                    `;
+                } else {
+                    segmentsHtml = '<div class="text-gray-500">就在这附近，走路去吧！</div>';
+                }
+
+                return `
+                <div class="bg-white border-2 border-pencil rounded p-5 relative shadow-sm mb-4">
+                    <div class="flex justify-between items-center mb-4 border-b border-dashed border-gray-200 pb-2">
+                        <span class="font-bold text-xl font-hand">${d.name}</span>
+                        <span class="text-sm bg-pencil text-white px-2 py-1 rounded shadow-sm">总耗时 ${d.time} 分钟</span>
+                    </div>
+                    <div class="space-y-0">
+                        ${segmentsHtml}
+                    </div>
+                </div>
+            `}).join('');
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeRouteModal() { document.getElementById('route-modal').classList.add('hidden'); }
+        function showAboutModal() { document.getElementById('about-modal').classList.remove('hidden'); }
+        function closeAboutModal() { document.getElementById('about-modal').classList.add('hidden'); }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+
+</body></html>
